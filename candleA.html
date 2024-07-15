@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personalized Zodiac Candle</title>
+    <link rel="stylesheet" href="candleA.css" />
+</head>
+
+<body>
+    <div class="container">
+        <div class="image">
+            <img src="images/candelA.jpg" alt="Candle A" />
+        </div>
+        <div class="text">
+            <h2>Personalized Zodiac Candle</h2>
+            <p>Make it extra special with your birth details!</p>
+            <form id="candle-form">
+                <div class="dropdown">
+                    <label for="birth-day">Birth Day:</label>
+                    <select id="birth-day" name="birth-day" required>
+                        <option value="">Select Day</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                        <option value="13">13</option>
+                        <option value="14">14</option>
+                        <option value="15">15</option>
+                        <option value="16">16</option>
+                        <option value="17">17</option>
+                        <option value="18">18</option>
+                        <option value="19">19</option>
+                        <option value="20">20</option>
+                        <option value="21">21</option>
+                        <option value="22">22</option>
+                        <option value="23">23</option>
+                        <option value="24">24</option>
+                        <option value="25">25</option>
+                        <option value="26">26</option>
+                        <option value="27">27</option>
+                        <option value="28">28</option>
+                        <option value="29">29</option>
+                        <option value="30">30</option>
+                        <option value="31">31</option>
+                    </select>
+                </div>
+                <div class="dropdown">
+                    <label for="birth-month">Birth Month:</label>
+                    <select id="birth-month" name="birth-month" required>
+                        <option value="">Select Month</option>
+                        <option value="January">January</option>
+                        <option value="February">February</option>
+                        <option value="March">March</option>
+                        <option value="April">April</option>
+                        <option value="May">May</option>
+                        <option value="June">June</option>
+                        <option value="July">July</option>
+                        <option value="August">August</option>
+                        <option value="September">September</option>
+                        <option value="October">October</option>
+                        <option value="November">November</option>
+                        <option value="December">December</option>
+                    </select>
+                </div>
+                <div class="dropdown">
+                    <label for="zodiac-sign">Zodiac Sign:</label>
+                    <select id="zodiac-sign" name="zodiac-sign" required>
+                        <option value="">Select Zodiac Sign</option>
+                        <option value="Aries">Aries (March 21 - April 19)</option>
+                        <option value="Taurus">Taurus (April 20 - May 20)</option>
+                        <option value="Gemini">Gemini (May 21 - June 20)</option>
+                        <option value="Cancer">Cancer (June 21 - July 22)</option>
+                        <option value="Leo">Leo (July 23 - August 22)</option>
+                        <option value="Virgo">Virgo (August 23 - September 22)</option>
+                        <option value="Libra">Libra (September 23 - October 22)</option>
+                        <option value="Scorpio">Scorpio (October 23 - November 21)</option>
+                        <option value="Sagittarius">Sagittarius (November 22 - December 21)</option>
+                        <option value="Capricorn">Capricorn (December 22 - January 19)</option>
+                        <option value="Aquarius">Aquarius (January 20 - February 18)</option>
+                        <option value="Pisces">Pisces (February 19 - March 20)</option>
+                    </select>
+                </div>
+                <button type="submit">Add to Cart</button>
+            </form>
+            <div class="product-description">
+                <h3>Product Description</h3>
+                <p>Our Personalized Zodiac Candle is the perfect way to celebrate your unique astrological sign. Each
+                    candle is crafted to highlight the distinct characteristics and attributes of your zodiac sign,
+                    creating a personal and meaningful experience.</p>
+                <p>Why purchase this candle? It’s not just a candle, but a reflection of your personality and traits.
+                    Infused with scents that resonate with your sign, it helps enhance your environment, bringing peace,
+                    tranquility, and a touch of the cosmos to your space.</p>
+                <p>Benefits of purchasing our zodiac candle include:
+                <ul>
+                    <li>Customizable with your birth details for a truly personalized touch.</li>
+                    <li>Perfect as a thoughtful gift for friends and family.</li>
+                    <li>Made with high-quality ingredients for a long-lasting burn.</li>
+                    <li>Helps in meditation and relaxation, aligning with your astrological energy.</li>
+                </ul>
+                </p>
+                <p>Embrace your star sign and bring a celestial influence into your home with our Personalized Zodiac
+                    Candle!</p>
+            </div> .
+            <!-- <div class="related-products">
+                <h3>People May Also Like</h3>
+                <div class="related-products-grid">
+                    <div class="related-product">
+                        <img src="images/candleB.jpg" alt="Candle B">
+                    </div>
+                    <div class="related-product">
+                        <img src="images/candleC.jpg" alt="Candle C">
+                    </div>
+                    <div class="related-product">
+                        <img src="images/candleD.jpg" alt="Candle D">
+                    </div>
+                    <div class="related-product">
+                        <img src="images/candleE.jpg" alt="Candle E">
+                    </div>
+                </div>
+            </div> -->
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('candle-form').addEventListener('submit', function (event) {
+            const day = document.getElementById('birth-day').value;
+            const month = document.getElementById('birth-month').value;
+            const sign = document.getElementById('zodiac-sign').value;
+
+            if (!day || !month || !sign) {
+                alert('Please fill all the required details.');
+                event.preventDefault(); // Prevent form submission
+            } else {
+                const params = new URLSearchParams();
+                params.append('day', day);
+                params.append('month', month);
+                params.append('sign', sign);
+                window.location.href = `cart.html? ${params.toString()}`;
+                event.preventDefault();
+            }
+        });
+    </script>
+</body>
+
+</html>

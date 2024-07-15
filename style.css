@@ -1,0 +1,621 @@
+General Styles
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Raleway', sans-serif;
+  background-color: #f5f5dc; /* Beige background color */
+  color: #333;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Header Styles */
+#header {
+  background: linear-gradient(to right, #4b0082, #ff69b4);
+  padding: 5px 30px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  height: 50px;
+}
+
+#header .logo {
+  width: 150px; /* Adjusted logo size */
+  height: auto;
+}
+
+#navbar {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+#navbar li {
+  padding: 0 20px;
+}
+
+#navbar li a {
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 400;
+  color: white;
+  transition: 0.3s ease;
+  line-height: 50px;
+}
+
+#navbar li a:hover,
+#navbar li a.active {
+  color: #ff69b4; /* Pink color for hover effect */
+}
+
+#hero {
+  background-image: url('images/hpb.png');
+  height: 90vh;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 0 20px;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+#hero h4 {
+  padding-bottom: 10px;
+  font-size: 24px;
+}
+
+#hero button {
+  background-color: #ff69b4; /* Pink background */
+  color: #ffffff; /* White text */
+  font-family: 'Georgia', serif; /* Mystical feel */
+  font-size: 18px;
+  border: none;
+  border-radius: 10px;
+  padding: 15px 30px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+#hero button:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Zodiac Signs Section */
+.section-p1 {
+  padding: 40px 20px;
+}
+
+.section-p1 h1 {
+  text-align: center;
+  font-size: 36px;
+  color: #4b0082;
+}
+
+#feature {
+  background-color: #f7f7f7; /* light gray background */
+  padding: 50px; /* add some padding to the section */
+}
+
+#feature h1 {
+  font-size: 46px; /* increase font size */
+  font-weight: bold; /* make the font bold */
+  color: purple; /* dark gray color */
+  margin-bottom: 20px; /* add some space between the title and the box */
+  text-align: center;
+}
+
+.fe-box {
+  width: 250px; /* increase the width of the box */
+  height: 300px; /* increase the height of the box */
+  background-color: #f7f7f7; /* same background color as the section */
+  border-radius: 10px; /* add some rounded corners */
+  padding: 0; /* remove padding */
+  display: inline-block; /* make the box inline-block */
+  margin: 20px; /* add some margin to the box */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* add some subtle shadow */
+  position: relative; /* add relative positioning */
+}
+
+.fe-box img {
+  width: 100%; /* make the image take up 100% of the box width */
+  height: 100%; /* make the image take up 100% of the box height */
+  border-radius: 10px; /* add some rounded corners to the image */
+  object-fit: cover; /* make the image cover the entire box */
+  position: absolute; /* add absolute positioning */
+  top: 0; /* position the image at the top */
+  left: 0; /* position the image at the left */
+  border: none; /* remove the border */
+  transition: transform 0.3s, filter 0.3s; /* add transition effect */
+}
+
+.fe-box:hover img {
+  transform: scale(1.1); /* increase the image size on hover */
+  filter: brightness(1.1) contrast(1.1); /* enhance the image on hover */
+}
+
+.fe-box:hover {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* increase the shadow on hover */
+  transform: scale(1.05); /* add some scale effect on hover */
+}
+
+#astro-section {
+  background-color: #fff;
+  padding: 40px 20px;
+  margin: 20px 0;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+#astro-section h2 {
+  font-size: 36px;
+  color: #4b0082;
+  margin-bottom: 20px;
+}
+
+#astro-form {
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+#astro-form input[type="text"] {
+  padding: 10px;
+  border: 2px solid #4b0082;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+
+#astro-form button {
+  background-color: #4b0082;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+#astro-form button:hover {
+  background-color: #333;
+}
+
+#astro-sign {
+  margin-top: 20px;
+  font-size: 24px;
+  color: #4b0082;
+}
+
+/* Additional Styles for Existing Sections */
+/* Banner Styles */
+.banner-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.banner {
+  width: 100%;
+  margin: 20px 0;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.banner .button-left-bottom {
+  position: absolute;
+  bottom: 40px; /* Moved upwards from 20px to 30px */
+  left: 30%; /* Moved slightly left from 40% to 35% */
+  transform: translateX(-50%);
+  background-color: #ff69b4;
+  color: #ffffff;
+  font-family: 'Georgia', serif;
+  font-size: 18px;
+  border: none;
+  border-radius: 10px;
+  padding: 15px 30px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.banner .button-left-bottom:hover {
+  background-color: #555;
+  box-shadow: 0 8px 16px rgba(255, 255, 255, 0.3); /* Changed box-shadow color to white */
+  transform: scale(1.05); /* Enhanced the button by scaling it up */
+}
+
+.banner .button-center-middle {
+  position: absolute;
+  top: 70%; /* Adjusted from 50% to 70% */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #ff69b4;
+  color: #ffffff;
+  font-family: 'Georgia', serif;
+  font-size: 18px;
+  border: none;
+  border-radius: 10px;
+  padding: 15px 30px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.banner .button-center-middle:hover {
+  background-color: #555;
+  transform: translateY(2px); /* Move the button down slightly on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.banner .button-right-center {
+  position: absolute;
+  top: 60%; /* Moved down from 50% to 55% */
+  left: 65%; /* Moved towards right from 60% to 65% */
+  transform: translate(0, -50%); /* Adjusted to only translate vertically */
+  background-color: #ff69b4;
+  color: #ffffff;
+  font-family: 'Georgia', serif;
+  font-size: 18px;
+  border: none;
+  border-radius: 10px;
+  padding: 15px 30px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.banner .button-right-center:hover {
+  background-color: #555;
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Blog Hero Image Styles */
+#blog-hero img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+  #blog-hero img {
+    height: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  #blog-hero img {
+    height: 150px;
+  }
+}
+
+/* Blog Post Styles */
+.blog-posts {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+}
+
+.blog-post {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.blog-post img {
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+/* Astro Jewels Page Styles */
+#intro {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+#intro h2 {
+  font-size: 36px;
+  color: #4b0082;
+}
+
+#form {
+  padding: 40px 20px;
+  background-color: #f7f7f7;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#form label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+#form input[type="text"],
+#form input[type="date"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#form button[type="submit"] {
+  background-color: #ff69b4;
+  color: #ffffff;
+  font-family: 'Georgia', serif;
+  font-size: 18px;
+  border: none;
+  border-radius: 10px;
+  padding: 15px 30px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+#form button[type="submit"]:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Astrological Insights */
+#astro-insights {
+  padding: 40px 20px;
+  background-color: #f7f7f7;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#astro-insights h2 {
+  font-size: 24px;
+  color: #4b0082;
+}
+
+#astro-insights div {
+  margin-bottom: 20px;
+}
+
+/* Jewelry Recommendations */
+#jewelry-recommendations {
+  padding: 40px 20px;
+  background-color: #f7f7f7;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#jewelry-recommendations h2 {
+  font-size: 24px;
+  color: #4b0082;
+}
+
+#jewelry-recommendations div {
+  margin-bottom: 20px;
+}
+
+/* Product Gallery */
+#product-gallery {
+  padding: 40px 20px;
+  background-color: #f7f7f7;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#product-gallery h2 {
+  font-size: 24px;
+  color: #4b0082;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+}
+
+.product {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+.product img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.product h3 {
+  font-size: 18px;
+  color: #4b0082;
+}
+
+.product p {
+  font-size: 14px;
+  color: #333;
+}
+
+.product button[type="button"] {
+  background-color: #ff69b4;
+  color: #ffffff;
+  font-family: 'Georgia', serif;
+  font-size: 18px;
+  border: none;
+  border-radius: 10px;
+  padding: 15px 30px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.product button[type="button"]:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Customer Reviews */
+#customer-reviews {
+  padding: 40px 20px;
+  background-color: #f7f7f7;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#customer-reviews h2 {
+  font-size: 24px;
+  color: #4b0082;
+}
+
+.testimonial {
+  margin-bottom: 20px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial p {
+  font-size: 14px;
+  color: #333;
+}
+
+/* Footer */
+footer {
+  padding: 20px;
+  background-color: #f7f7f7;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+footer ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+footer li {
+  margin-right: 20px;
+}
+
+footer a {
+  color: #333;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: #ff69b4;
+}
+
+.social-media {
+  margin-top: 20px;
+}
+
+.social-media a {
+  margin-right: 20px;
+  font-size: 24px;
+  color: #333;
+}
+
+.social-media a:hover {
+  color: #ff69b4;
+}
+
+/* Global Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Raleway', sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f9f9f9;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 600;
+  color: #222;
+}
+
+p {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  margin-bottom: 10px;
+}
+
+a {
+  text-decoration: none;
+  color: #337ab7;
+}
+
+a:hover {
+  color: #23527c;
+}
+
+.banner-container {
+  width: 100%; /* Make the container full-width */
+  height: 300px; /* Set a fixed height for the banner */
+  display: flex; /* Center the image horizontally and vertically */
+  justify-content: center;
+  align-items: center;
+  background-color: #f7f7f7; /* Add a light gray background */
+  padding: 20px; /* Add some padding around the image */
+}
+
+.banner-image {
+  max-width: 100%; /* Ensure the image doesn't overflow its container */
+  height: auto; /* Maintain the image's aspect ratio */
+  border-radius: 10px; /* Add a subtle border radius */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a soft shadow */
+}
+
+.category-image {
+  width: 100%; /* Set the width to 100% */
+  height: 100%; /* Set a fixed height for the image */
+  object-fit: cover; /* Make the image cover the entire container */
+  border-radius: 10px;
+  margin-bottom: 20px; /* Add some margin bottom to separate the images */
+}

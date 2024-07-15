@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="cart.css" />
+</head>
+
+<body>
+    <div class="container">
+        <h1>Shopping Cart</h1>
+        <div class="cart-item">
+            <img src="images/candelA.jpg" alt="Candle A" class="cart-image" />
+            <div class="item-details">
+                <h2>Personalized Zodiac Candle</h2>
+                <p id="item-description"></p>
+            </div>
+        </div>
+        <div class="cart-actions">
+            <button id="continue-shopping">Continue Shopping</button>
+            <button id="pay-now">Pay Now</button>
+        </div>
+    </div>
+
+    <script>
+        // Get query parameters from the URL
+        const params = new URLSearchParams(window.location.search);
+        const day = params.get('day');
+        const month = params.get('month');
+        const sign = params.get('sign');
+
+        // Check if all parameters are present
+        if (day && month && sign) {
+            // Update the item description with the selected details
+            document.getElementById('item-description').textContent = `Birth Day: ${day}, Birth Month: ${month}, Zodiac Sign: ${sign}`;
+            // } else {
+            //     // Handle the case where some parameters might be missing
+            //     document.getElementById('item-description').textContent = 'Some details are missing.';
+            // }
+
+            // Add event listeners to the buttons
+            document.getElementById('continue-shopping').addEventListener('click', function () {
+                window.location.href = 'index.html'; // Change to your main page URL
+            });
+
+            document.getElementById('pay-now').addEventListener('click', function () {
+                alert('Proceed to payment.'); // Implement your payment functionality here
+            });
+    </script>
+</body>
+
+</html>

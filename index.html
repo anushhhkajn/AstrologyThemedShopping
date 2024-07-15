@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Astrology-Themed Website</title>
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+  <link rel="stylesheet" href="style1.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <section id="header">
+    <a href="#"><img src="images/ald.png" class="logo" alt="logo" /></a>
+    <div>
+      <ul id="navbar">
+        <li><a class="active" href="index.html">Home</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li>
+          <a href="cart.html"><i class="fas fa-shopping-cart"></i></a>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="hero">
+    <div>
+      <h4>Discover Your Zodiac Style</h4>
+      <button>Shop By Zodiac</button>
+    </div>
+  </section>
+
+  <section id="feature" class="section-p1">
+    <h1>Zodiac signs</h1>
+    <div class="fe-box">
+      <img src="images/pisces.jpg" alt="Pisces" />
+    </div>
+    <div class="fe-box">
+      <img src="images/sagi.jpg" alt="Sagittarius" />
+    </div>
+    <div class="fe-box">
+      <img src="images/capi.jpg" alt="Capricorn" />
+    </div>
+    <div class="fe-box">
+      <img src="images/virgo.jpg" alt="Virgo" />
+    </div>
+    <div class="fe-box">
+      <img src="images/leo.jpg" alt="Leo" />
+    </div>
+    <div class="fe-box">
+      <img src="images/scorpio.jpg" alt="Scorpio" />
+    </div>
+    <div class="fe-box">
+      <img src="images/gemini.jpg" alt="Gemini" />
+    </div>
+    <div class="fe-box">
+      <img src="images/libra.jpg" alt="Libra" />
+    </div>
+    <div class="fe-box">
+      <img src="images/cancer.jpg" alt="Cancer" />
+    </div>
+    <div class="fe-box">
+      <img src="images/aq.jpg" alt="Aquarius" />
+    </div>
+    <div class="fe-box">
+      <img src="images/tau.jpg" alt="Taurus" />
+    </div>
+    <div class="fe-box">
+      <img src="images/aries.jpg" alt="Aries" />
+    </div>
+  </section>
+
+  <section id="astro-section" class="section-p1">
+    <h2>Find Your Astrological Sign</h2>
+    <form id="astro-form">
+        <input type="text" id="name" placeholder="Enter your name">
+        <button type="submit">Get Astro Sign</button>
+    </form>
+    <div id="astro-sign"></div>
+  </section>
+
+  <section id="recommendations" class="section-p1 hidden">
+    <h2>Recommended Products</h2>
+    <div id="product-grid" class="product-grid"></div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

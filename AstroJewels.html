@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Astro Jewels - Personalized Astrology-Themed Products</title>
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    /* Add some CSS to make it look more professional */
+    .banner-container {
+      position: relative;
+      width: 100%;
+      height: 300px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #f7f7f7;
+      padding: 20px;
+      overflow: hidden;
+    }
+
+    .banner-image {
+      width: 100%;
+      /* Set the width to 100% */
+      height: 100%;
+      /* Set the height to 100% */
+      object-fit: cover;
+      /* Make the image cover the entire container */
+      border-radius: 10px;
+    }
+
+    .banner-overlay {
+      position: absolute;
+      top: 50%;
+      /* Position the overlay at 50% from the top */
+      left: 50%;
+      /* Position the overlay at 50% from the left */
+      transform: translate(-50%, -50%);
+      /* Center the overlay horizontally and vertically */
+      background-color: rgba(0, 0, 0, 0.5);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #ffffff;
+      padding: 20px;
+      /* Add some padding to the overlay */
+    }
+
+    .banner-buttons {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+    }
+
+    .banner-button {
+      background-color: #ff69b4;
+      color: #ffffff;
+      font-family: 'Georgia', serif;
+      font-size: 18px;
+      border: none;
+      border-radius: 10px;
+      padding: 15px 30px;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .banner-button:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    }
+
+    .collection-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+
+    .collection-grid {
+      width: 100%;
+      margin: 0;
+    }
+
+    .collection-item {
+      position: relative;
+      background-color: #ffffff;
+      padding: 20px;
+      flex: 0 0 25%;
+      margin: 20px;
+      border: 1px solid #dddddd;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      width: calc(25% - 20px);
+      /* adjust the width to fit 4 items in a row */
+      margin: 10px;
+      /* add some margin for spacing */
+    }
+
+    .collection-image {
+      width: 50%;
+      /* Reduce the image width */
+      height: 80px;
+      /* Reduce the image height */
+      object-fit: cover;
+      border-radius: 10px;
+      margin: 0 auto;
+      /* Center the image */
+    }
+
+    .collection-item .collection-text {
+      position: absolute;
+      /* Make the text absolute */
+      top: 50%;
+      /* Position the text at 50% from the top */
+      left: 50%;
+      /* Position the text at 50% from the left */
+      transform: translate(-50%, -50%);
+      /* Center the text horizontally and vertically */
+      text-align: center;
+      /* Center the text */
+      color: #ffffff;
+      /* Make the text white */
+    }
+
+    .collection-item .collection-button {
+      position: absolute;
+      /* Make the button absolute */
+      bottom: 20px;
+      /* Position the button at the bottom */
+      left: 50%;
+      /* Position the button at 50% from the left */
+      transform: translateX(-50%);
+      /* Center the button horizontally */
+      background-color: #ff69b4;
+      /* Make the button pink */
+      color: #ffffff;
+      /* Make the button text white */
+      border: none;
+      border-radius: 10px;
+      padding: 10px 20px;
+      cursor: pointer;
+    }
+
+    .collection-item h3 {
+      font-size: 25px;
+      font-weight: bolder;
+      margin-top: 10px;
+    }
+
+    .collection-item p {
+      font-size: 14px;
+      color: #666666;
+      margin-bottom: 20px;
+    }
+
+    .collection-button {
+      background-color: #ff69b4;
+      color: #ffffff;
+      font-family: 'Georgia', serif;
+      font-size: 16px;
+      border: none;
+      border-radius: 10px;
+      padding: 10px 20px;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .collection-button:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Add some responsive design */
+    @media only screen and (max-width: 768px) {
+      .banner-container {
+        height: 200px;
+      }
+
+      .collection-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media only screen and (max-width: 480px) {
+      .banner-container {
+        height: 150px;
+      }
+
+      .collection-grid {
+        grid-template-columns: repeat(1, 1fr);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <section id="header">
+    <a href="#"><img src="images/ald.png" class="logo" alt="logo" /></a>
+    <div>
+      <ul id="navbar">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li>
+          <a href="cart.html"><i class="fas fa-shopping-cart"></i></a>
+        </li>
+      </ul>
+    </div>
+  </section>
+  <section id="astro-jewels-banner">
+    <div class="banner-container">
+      <img src="images/ATJ1.png" alt="Astro Jewels Banner" class="banner-image">
+    </div>
+    </div>
+  </section>
+  <section id="female-zodiac-collection">
+    <h1>
+      <center>Find your sparkle for every occasion</center>
+    </h1>
+    <div class="collection-grid">
+      <div class="collection-item">
+        <img src="images/im1.jpg" alt="Pendant"
+          style="object-fit: cover; width: 100%; height: 100%; border-radius: 10px;">
+        <div class="collection-text">
+          <h3>Pendants</h3>
+        </div>
+        <a href="pendant-category.html" class="collection-button">Shop Now</a>
+      </div>
+      <div class="collection-item">
+        <img src="images/earring.avif" alt="Earring"
+          style="object-fit: cover; width: 100%; height: 100%; border-radius: 10px;">
+        <div class="collection-text">
+          <h3>Earrings</h3>
+        </div>
+        <button class="collection-button">Shop Now</button>
+      </div>
+      <div class="collection-item">
+        <img src="images/brace.avif" alt="Bracelet"
+          style="object-fit: cover; width: 100%; height: 100%; border-radius: 10px;">
+        <div class="collection-text">
+          <h3>Bracelets</h3>
+        </div>
+        <button class="collection-button">Shop Now</button>
+      </div>
+      <div class="collection-item">
+        <img src="images/ring.webp" alt="Ring"
+          style="object-fit: cover; width: 100%; height: 100%; border-radius: 10px;">
+        <div class="collection-text">
+          <h3>Rings</h3>
+        </div>
+        <button class="collection-button">Shop Now</button>
+      </div>
+    </div>
+  </section>
+  <script src="script.js"></script>
+</body>
+
+</html>

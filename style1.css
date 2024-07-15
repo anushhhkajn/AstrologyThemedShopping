@@ -1,0 +1,272 @@
+/* General Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Raleway', sans-serif;
+    background-color: #f5f5dc;
+    color: #333;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Header Styles */
+#header {
+    background: linear-gradient(to right, #4b0082, #ff69b4);
+    padding: 5px 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    height: 50px;
+}
+
+#header .logo {
+    width: 150px;
+    height: auto;
+}
+
+#navbar {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+#navbar li {
+    padding: 0 20px;
+}
+
+#navbar li a {
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 400;
+    color: white;
+    transition: 0.3s ease;
+    line-height: 50px;
+}
+
+#navbar li a:hover,
+#navbar li a.active {
+    color: #ff69b4;
+}
+
+#hero {
+    background-image: url('images/hpb.png');
+    height: 90vh;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 0 20px;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+#hero h4 {
+    padding-bottom: 10px;
+    font-size: 24px;
+}
+
+#hero button {
+    background-color: #ff69b4;
+    color: #ffffff;
+    font-family: 'Georgia', serif;
+    font-size: 18px;
+    border: none;
+    border-radius: 10px;
+    padding: 15px 30px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+#hero button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Zodiac Signs Section */
+.section-p1 {
+    padding: 40px 20px;
+}
+
+.section-p1 h1 {
+    text-align: center;
+    font-size: 36px;
+    color: #4b0082;
+}
+
+#feature {
+    background-color: #f7f7f7;
+    padding: 50px;
+}
+
+#feature h1 {
+    font-size: 46px;
+    font-weight: bold;
+    color: purple;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.fe-box {
+    width: 250px;
+    height: 300px;
+    background-color: #f7f7f7;
+    border-radius: 10px;
+    padding: 0;
+    display: inline-block;
+    margin: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.fe-box img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: none;
+    transition: transform 0.3s, filter 0.3s;
+}
+
+.fe-box:hover img {
+    transform: scale(1.1);
+    filter: brightness(1.1) contrast(1.1);
+}
+
+.fe-box:hover {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+}
+
+#astro-section {
+    text-align: center;
+}
+
+#astro-section h2 {
+    font-size: 36px;
+    color: #4b0082;
+}
+
+#astro-section form {
+    display: inline-block;
+    margin-top: 20px;
+}
+
+#astro-section input[type="text"] {
+    width: 300px;
+    padding: 10px;
+    border: 2px solid #4b0082;
+    border-radius: 10px;
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+#astro-section button {
+    background-color: #ff69b4;
+    color: #ffffff;
+    font-family: 'Georgia', serif;
+    font-size: 18px;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+#astro-section button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+#astro-sign {
+    font-size: 24px;
+    color: #4b0082;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+#recommendations {
+    text-align: center;
+    padding: 40px 20px;
+    display: none;
+}
+
+#recommendations.visible {
+    display: block;
+}
+
+#recommendations h2 {
+    font-size: 36px;
+    color: #4b0082;
+    margin-bottom: 20px;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    /* Adjusted gap between products */
+    justify-content: center;
+}
+
+.product-card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 60%;
+    /* Full width within the grid column */
+    /* padding: 20px; */
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+    margin-left: 10rem;
+    margin-right: 10rem;
+    margin-top: 5rem;
+}
+
+.product-card img {
+    width: 100%;
+    height: 20rem;
+    /* Adjusted height for better layout */
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+
+}
+
+.product-card h3 {
+    font-size: 20px;
+    color: #4b0082;
+    margin-bottom: 10px;
+}
+
+.product-card p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.hidden {
+    display: none;
+}

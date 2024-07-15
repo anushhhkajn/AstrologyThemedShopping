@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Astro Jewels - Pendant Category</title>
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    /* Add some CSS to make it look more professional */
+    .category-header {
+      background-color: #f7f7f7;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .category-header h1 {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 20px;
+    }
+
+    .category-item {
+      background-color: #ffffff;
+      padding: 20px;
+      border: 1px solid #dddddd;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .category-item img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .category-item h3 {
+      font-size: 18px;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
+    .category-item p {
+      font-size: 14px;
+      color: #666666;
+      margin-bottom: 20px;
+    }
+
+    .category-button {
+      background-color: #ff69b4;
+      color: #ffffff;
+      font-family: 'Georgia', serif;
+      font-size: 16px;
+      border: none;
+      border-radius: 10px;
+      padding: 10px 20px;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .category-button:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    }
+  </style>
+</head>
+
+<body>
+  <section id="category-header">
+    <div class="category-header">
+      <h1>Pendant Category</h1>
+      <p>Explore our collection of beautifully crafted pendants</p>
+    </div>
+  </section>
+  <section id="category-grid">
+    <div class="category-grid">
+      <div class="category-item">
+        <img src="images/image4.webp" alt="Pendant 1">
+        <h3>Gemstone Pendant Necklace</h3>
+        <p>Beautifully crafted pendant with intricate details</p>
+        <a href="pendant-detail.html?id=1" class="category-button">View Details</a>
+      </div>
+      <div class="category-item">
+        <img src="images/image2.jpg" alt="Pendant 2">
+        <h3>Zodiac Necklace</h3>
+        <p>Elegant pendant with a touch of sophistication</p>
+        <a href="pendant-detail.html?id=2" class="category-button">View Details</a>
+      </div>
+      <div class="category-item">
+        <img src="images/image3.jpg" alt="Pendant 3">
+        <h3>Gold Zodiac Pendant Necklace</h3>
+        <p>Unique pendant with a modern twist</p>
+        <a href="pendant-detail.html?id=3" class="category-button">View Details</a>
+      </div>
+      <!-- Add more category items here -->
+    </div>
+  </section>
+</body>
+
+</html>

@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zodiac Necklace</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    #header {
+      background: linear-gradient(to right, #4b0082, #ff69b4);
+      padding: 5px 30px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      height: 50px;
+    }
+
+
+    #header .logo {
+      width: 150px;
+      /* Adjusted logo size */
+      height: auto;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      padding: 20px;
+    }
+
+    .product-image {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-right: 20px;
+    }
+
+    .main-image {
+      max-width: 100%;
+      height: auto;
+      border: 5px solid #ddd;
+      margin-bottom: 10px;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .image-thumbnails {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .thumbnail {
+      width: 150px;
+      height: 100px;
+      border: 1px solid #ddd;
+      margin: 5px;
+      cursor: pointer;
+    }
+
+    .thumbnail:hover {
+      border-color: #aaa;
+    }
+
+    .product-info {
+      flex: 1;
+      max-width: 400px;
+    }
+
+    .product-info h2 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    .product-info p {
+      margin-bottom: 10px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    .add-to-wishlist {
+      background-color: #ff9800;
+      color: white;
+    }
+
+    .add-to-wishlist:hover {
+      background-color: #e68900;
+    }
+
+    .buy-now {
+      background-color: #4CAF50;
+      color: white;
+    }
+
+    .buy-now:hover {
+      background-color: #3e8e41;
+    }
+
+    #suggestions {
+      margin-top: 50px;
+      padding: 20px;
+    }
+
+    #suggestions h3 {
+      margin-bottom: 20px;
+    }
+
+    .suggestion-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+
+    .suggestion-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      background-color: #f9f9f9;
+    }
+
+    .suggestion-item img {
+      width: 100%;
+      height: auto;
+      margin-bottom: 10px;
+    }
+
+    .suggestion-item h4 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+    }
+
+    .suggestion-item p {
+      font-size: 1rem;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    .suggestion-button {
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .suggestion-button:hover {
+      background-color: #0056b3;
+    }
+
+    /* Lightbox styles */
+    .lightbox {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.9);
+    }
+
+    .lightbox-content {
+      margin: 15% auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      max-width: 90%;
+    }
+
+    .lightbox-content img {
+      max-width: 100%;
+      max-height: 100%;
+    }
+
+    .close {
+      position: absolute;
+      top: 20px;
+      right: 35px;
+      color: #fff;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    /* Review styles */
+    #reviews {
+      margin-top: 30px;
+    }
+
+    .review {
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 10px;
+      margin-bottom: 10px;
+    }
+
+    .review-form {
+      margin-top: 20px;
+    }
+
+    .rating input {
+      display: none;
+    }
+
+    .rating label {
+      float: right;
+      padding: 10px;
+      font-size: 30px;
+      color: #ddd;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .rating input:checked~label,
+    .rating input:hover~label {
+      color: #f7c02d;
+    }
+
+    .rating input:checked~label:hover,
+    .rating input:checked~label:hover~label,
+    .rating input:hover~label:hover~label {
+      color: #f7c02d;
+    }
+
+    .review-form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      border-radius: 5px;
+      border: 1px solid #ddd;
+    }
+
+    .review-form button {
+      margin-top: 10px;
+      background-color: #007bff;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .review-form button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+
+<body>
+  <section id="header">
+    <a href="#"><img src="images/ald.png" class="logo" alt="logo" /></a>
+  </section>
+  <div class="container" id="product-detail">
+    <div class="product-image">
+      <img src="images/pimg1.jpg" alt="Pendant 1" class="main-image" id="main-image">
+      <div class="image-thumbnails" id="thumbnails">
+        <img src="images/pimg1.jpg" alt="Pendant 1" class="thumbnail">
+        <img src="images/pimg2.jpg" alt="Pendant 1" class="thumbnail">
+        <img src="images/pimg3.jpg" alt="Pendant 1" class="thumbnail">
+        <img src="images/pimg4.jpg" alt="Pendant 1" class="thumbnail">
+        <img src="images/pimg5.jpg" alt="Pendant 1" class="thumbnail">
+      </div>
+    </div>
+    <div class="product-info">
+      <h2>Zodiac Necklace, Gold Zodiac Jewelry</h2>
+      <p><strong>Price:</strong> $30.00</p>
+      <p><strong>Gold Zodiac Charm:</strong> 13mm x 8mm (0.51 inch x 0.31 inch)</p>
+      <p><strong>Gold Filled Chain Necklace 14k:</strong> 18 inches</p>
+      <p><strong>All findings are excellent quality and finish</strong></p>
+      <p><strong>Beautifully packed, ready for gift giving</strong></p>
+      <p><strong>20 in stock</strong></p>
+
+      <section id="recommendation">
+        <h3>Find Your Zodiac Pendant</h3>
+        <label for="birthmonth">Select your birth month:</label>
+        <select id="birthmonth">
+          <option value="">--Select Month--</option>
+          <option value="1">January</option>
+          <option value="2">February</option>
+          <option value="3">March</option>
+          <option value="4">April</option>
+          <option value="5">May</option>
+          <option value="6">June</option>
+          <option value="7">July</option>
+          <option value="8">August</option>
+          <option value="9">September</option>
+          <option value="10">October</option>
+          <option value="11">November</option>
+          <option value="12">December</option>
+        </select>
+        <button class="button" id="recommend">Get Recommendation</button>
+        <p id="zodiac-recommendation"></p>
+      </section>
+
+      <p><strong>Zodiac Sign:</strong></p>
+      <select>
+        <option value="">Select an option...</option>
+        <option value="Aquarius">Aquarius - The Water Bearer</option>
+        <option value="Pisces">Pisces - The Fish</option>
+        <option value="Aries">Aries - The Ram</option>
+        <option value="Taurus">Taurus - The Bull</ option>
+        <option value="Gemini">Gemini - The Twins</option>
+        <option value="Cancer">Cancer - The Crab</option>
+        <option value="Leo">Leo - The Lion</option>
+        <option value="Virgo">Virgo - The Maiden</option>
+        <option value="Libra">Libra - The Scales</option>
+        <option value="Scorpio">Scorpio - The Scorpion</option>
+        <option value="Sagittarius">Sagittarius - Centaur The Archer</option>
+        <option value="Capricorn">Capricorn - The Sea Goat</option>
+      </select>
+
+      <div class="buttons">
+        <button class="button add-to-wishlist">Add to Wishlist</button>
+        <button class="button buy-now">Add to Cart</button>
+      </div>
+
+      <section id="delivery-return">
+        <h3>Delivery & Return</h3>
+        <p>All my jewelry comes beautifully packed via Canada Post in a secured bubble mailer.</p>
+      </section>
+
+      <section id="description">
+        <h3>Description</h3>
+        <p>Zodiac Necklace, Gold Zodiac Jewelry, Bridesmaids Gold Zodiac Gift, Personalized Gift, Zodiac Necklace,
+          Celestial Jewelry, Ask Questions</p>
+        <p>Excellent quality double sided Gold Zodiac charm necklace.</p>
+        <p>This circular zodiac charm features the stunning Zodiac Sign word e.g.: “Aquarius” on one side, along with
+          the symbol for this sign. The other side of the charm features a detailed design of a jug of flowing water.
+          Available in all 12 zodiac signs.</p>
+        <p><strong>Gold Zodiac Charm (Pewter):</strong> 13mm x 8mm (0.51 inch x 0.31 inch)</p>
+        <p><strong>14K Gold Filled Chain Necklace:</strong> 18 inches (Standard Size)</p>
+        <p>All metal findings are excellent quality and finish.</p>
+        <p>Please choose your zodiac charm from the drop-down menu.</p>
+      </section>
+
+      <section id="reviews">
+        <h3>Reviews</h3>
+        <div id="review-list"></div>
+        <div class="review-form">
+          <h4>Leave a Review</h4>
+          <div class="rating">
+            <input type="radio" id="star5" name="rating" value="5"><label for="star5" title="5 stars">☆</label>
+            <input type="radio" id="star4" name="rating" value="4"><label for="star4" title="4 stars">☆</label>
+            <input type="radio" id="star3" name="rating" value="3"><label for="star3" title="3 stars">☆</label>
+            <input type="radio" id="star2" name="rating" value="2"><label for="star2" title="2 stars">☆</label>
+            <input type="radio" id="star1" name="rating" value="1"><label for="star1" title="1 star">☆</label>
+          </div>
+          <textarea id="review-text" rows="4" placeholder="Write your review here..."></textarea>
+          <button class="button" id="submit-review">Submit Review</button>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <section id="suggestions">
+    <h3>You may also like:</h3>
+    <div class="suggestion-grid">
+      <div class="suggestion-item">
+        <img src="images/image1.jpeg" alt="Pendant 2">
+        <h4>Pendant 2</h4>
+        <p>Elegant pendant with a touch of sophistication</p>
+        <a href="pendant-detail.html?id=2" class="suggestion-button">View Details</a>
+      </div>
+      <div class="suggestion-item">
+        <img src="images/image4.webp" alt="Pendant 3">
+        <h4>Pendant 3</h4>
+        <p>Unique pendant with a modern twist</p>
+        <a href="pendant-detail.html?id=3" class="suggestion-button">View Details</a>
+      </div>
+      <div class="suggestion-item">
+        <img src="images/image3.jpg" alt="Pendant 4">
+        <h4>Pendant 4</h4>
+        <p>Stylish pendant with a touch of glamour</p>
+        <a href="pendant-detail.html?id=4" class="suggestion-button">View Details</a>
+      </div>
+      <div class="suggestion-item">
+        <img src="images/pimage5.jpeg" alt="Pendant 5">
+        <h4>Pendant 5</h4>
+        <p>Classic pendant with a timeless design</p>
+        <a href="pendant-detail.html?id=5" class="suggestion-button">View Details</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="lightbox">
+    <span class="close" id="close-lightbox">&times;</span>
+    <div class="lightbox-content">
+      <img id="lightbox-image" src="">
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const mainImage = document.getElementById('main-image');
+      const thumbnails = document.getElementById('thumbnails');
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImage = document.getElementById('lightbox-image');
+      const closeLightbox = document.getElementById('close-lightbox');
+      const reviewList = document.getElementById('review-list');
+      const submitReview = document.getElementById('submit-review');
+      const reviewText = document.getElementById('review-text');
+      let reviews = [];
+
+      thumbnails.addEventListener('click', (e) => {
+        if (e.target.classList.contains('thumbnail')) {
+          mainImage.src = e.target.src;
+          mainImage.style.width = '800px';
+          mainImage.style.height = '500px';
+        }
+      });
+
+      mainImage.addEventListener('click', () => {
+        lightbox.style.display = 'block';
+        lightboxImage.src = mainImage.src;
+      });
+
+      closeLightbox.addEventListener('click', () => {
+        lightbox.style.display = 'none';
+      });
+
+      window.addEventListener('click', (e) => {
+        if (e.target == lightbox) {
+          lightbox.style.display = 'none';
+        }
+      });
+
+      const zodiacSigns = {
+        1: 'Capricorn',
+        2: 'Aquarius',
+        3: 'Pisces',
+        4: 'Aries',
+        5: 'Taurus',
+        6: 'Gemini',
+        7: 'Cancer',
+        8: 'Leo',
+        9: 'Virgo',
+        10: 'Libra',
+        11: 'Scorpio',
+        12: 'Sagittarius'
+      };
+
+      const birthDates = {
+        'Capricorn': 'December 21-January 20',
+        'Aquarius': 'January 21-February 18',
+        'Pisces': 'February 19-March 20',
+        'Aries': 'March 21-April 19',
+        'Taurus': 'April 20-May 20',
+        'Gemini': 'May 21-June 20',
+        'Cancer': 'June 21-July 22',
+        'Leo': 'July 23-August 22',
+        'Virgo': 'August 23-September 22',
+        'Libra': 'September 23-October 22',
+        'Scorpio': 'October 23-November 21',
+        'Sagittarius': 'November 22-December 21'
+      };
+
+      document.getElementById('recommend').addEventListener('click', () => {
+        const month = document.getElementById('birthmonth').value;
+        if (month === "") {
+          document.getElementById('zodiac-recommendation').innerText = "Please select a birth month.";
+          return;
+        }
+        const zodiacSign = zodiacSigns[month];
+        const dateRange = birthDates[zodiacSign];
+        document.getElementById('zodiac-recommendation').innerText = `Your Zodiac Sign is ${zodiacSign}. (${dateRange})`;
+      });
+
+      submitReview.addEventListener('click', () => {
+        const selectedRating = document.querySelector('input[name="rating"]:checked');
+        if (!selectedRating) {
+          alert('Please select a rating.');
+          return;
+        }
+
+        const ratingValue = selectedRating.value;
+        const reviewTextValue = reviewText.value.trim();
+
+        if (!reviewTextValue) {
+          alert('Please enter a review text.');
+          return;
+        }
+
+        const review = {
+          rating: ratingValue,
+          text: reviewTextValue,
+        };
+
+        reviews.push(review);
+        displayReviews();
+        reviewText.value = '';
+        selectedRating.checked = false;
+      });
+
+      function displayReviews() {
+        reviewList.innerHTML = '';
+        let totalRating = 0;
+
+        reviews.forEach(review => {
+          totalRating += parseInt(review.rating);
+          const reviewDiv = document.createElement('div');
+          reviewDiv.className = 'review';
+          reviewDiv.innerHTML = `
+            <div class="rating">
+             ${'★'.repeat(review.rating)}${'☆'.repeat(5 - review.rating)}
+                            </div>
+                            <p>${review.text}</p>
+                          `;
+          reviewList.appendChild(reviewDiv);
+        });
+
+        const averageRating = totalRating / reviews.length;
+        const averageRatingText = `Average Rating: ${averageRating.toFixed(1)} / 5`;
+        reviewList.insertAdjacentHTML('beforebegin', averageRatingText);
+      }
+    });
+  </script>
+</body>
+
+</html>
